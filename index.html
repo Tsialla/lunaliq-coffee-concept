@@ -1,227 +1,103 @@
-<!DOCTYPE html>
+<!-- ABOUT US SECTION -->
 
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lunaliq Coffee</title>
+<section class="about">
+  <div class="about-container">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+```
+<div class="about-text">
+  <h2>About Us</h2>
+  <p>
+    Lunaliq Coffee is more than just coffee.  
+    It’s a calm space where aroma, design, and emotions meet.
+    We believe every cup tells a story — warm, minimal, and aesthetic.
+  </p>
+
+  <p>
+    Our mission is to create a cozy experience where people can relax,
+    connect, and enjoy high-quality specialty coffee in a beautiful environment.
+  </p>
+
+  <a href="#" class="about-btn">Learn More</a>
+</div>
+
+<div class="about-image">
+  <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
+</div>
+```
+
+  </div>
+</section>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  background: #f5f3ef;
-  color: #1a1a1a;
-}
-
-/* HERO */
-.hero {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.hero-video {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  text-align: center;
-}
-
-.hero-content h1 {
-  font-size: 48px;
-}
-
-.btn {
-  margin-top: 20px;
-  padding: 12px 30px;
-  background: #C3B098;
-  border-radius: 30px;
-  color: white;
-  text-decoration: none;
-}
-
-/* ABOUT */
 .about {
-  padding: 80px 20px;
-  text-align: center;
+  padding: 100px 20px;
+  background: #f5f3ef;
 }
 
-/* FEATURES */
-.features {
-  padding: 80px 20px;
+/* layout */
+.about-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 50px;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 20px;
+/* text */
+.about-text {
+  flex: 1;
 }
 
-.card {
-  background: white;
-  padding: 25px;
-  border-radius: 10px;
-}
-
-/* 🔥 GALLERY (FIXED WORKING) */
-.gallery {
-  padding: 80px 20px;
-  text-align: center;
-}
-
-.gallery h2 {
-  margin-bottom: 30px;
+.about-text h2 {
   font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+.about-text p {
+  margin-bottom: 15px;
+  line-height: 1.7;
+  opacity: 0.8;
 }
 
-.gallery-grid img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 12px;
+/* button */
+.about-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #C3B098;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
   transition: 0.3s;
 }
 
-.gallery-grid img:hover {
-  transform: scale(1.05);
+.about-btn:hover {
+  background: #a89275;
+  transform: translateY(-3px);
 }
 
-/* CONTACT */
-.contact {
-  padding: 80px 20px;
-  text-align: center;
+/* image */
+.about-image {
+  flex: 1;
 }
 
-input, textarea {
+.about-image img {
   width: 100%;
-  max-width: 500px;
-  padding: 12px;
-  margin: 10px 0;
+  border-radius: 15px;
+  object-fit: cover;
+  height: 400px;
 }
 
-/* FOOTER */
-footer {
-  background: #1a1a1a;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
-
-/* MOBILE */
+/* mobile */
 @media(max-width:768px){
-  .grid {
-    grid-template-columns: 1fr;
+  .about-container {
+    flex-direction: column;
+    text-align: center;
   }
 
-  .gallery-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .hero-content h1 {
-    font-size: 32px;
+  .about-image img {
+    height: 300px;
   }
 }
 </style>
-
-</head>
-
-<body>
-
-<!-- HERO -->
-
-<section class="hero">
-  <video autoplay muted loop playsinline class="hero-video">
-    <source src="https://cdn.shopify.com/videos/c/o/v/6d4639c170554c1a932330e59f6acbb2.mp4">
-  </video>
-
-  <div class="overlay"></div>
-
-  <div class="hero-content">
-    <h1>LUNALIQ COFFEE</h1>
-    <p>Cozy coffee & aesthetic vibes</p>
-    <a href="#" class="btn">Explore</a>
-  </div>
-</section>
-
-<!-- ABOUT -->
-
-<section class="about">
-  <h2>About Us</h2>
-  <p>Minimal coffee experience with aesthetic vibes and cozy atmosphere.</p>
-</section>
-
-<!-- FEATURES -->
-
-<section class="features">
-  <div class="grid">
-    <div class="card">Premium Coffee</div>
-    <div class="card">Cozy Space</div>
-    <div class="card">Aesthetic Design</div>
-  </div>
-</section>
-
-<!-- 🔥 GALLERY -->
-
-<section class="gallery">
-  <h2>Our Moments</h2>
-
-  <div class="gallery-grid">
-    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
-    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085">
-    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
-    <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814">
-    <img src="https://images.unsplash.com/photo-1504754524776-8f4f37790ca0">
-    <img src="https://images.unsplash.com/photo-1510626176961-4b57d4fbad03">
-  </div>
-</section>
-
-<!-- CONTACT -->
-
-<section class="contact">
-  <h2>Contact</h2>
-  <input placeholder="Name">
-  <input placeholder="Email">
-  <textarea placeholder="Message"></textarea>
-</section>
-
-<footer>
-  © 2026 Lunaliq Coffee
-</footer>
-
-</body>
-</html>
