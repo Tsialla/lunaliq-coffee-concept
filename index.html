@@ -18,47 +18,56 @@ body {
   position: relative;
   height: 100vh;
 }
-
 .hero video {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
-/* TEXT ON VIDEO */
 .hero-text {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  text-align: center;
 }
 
-.hero-text h1 {
-  font-size: 40px;
+/* SECTION STYLE */
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 10%;
 }
 
-/* ABOUT */
-.about {
-  padding: 40px;
-  text-align: center;
+/* IMAGE */
+.section img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
-/* GALLERY */
-.gallery {
-  padding: 40px;
+/* TEXT */
+.section-text {
+  max-width: 400px;
 }
 
-.gallery img {
-  width: 48%;
-  margin: 1%;
+.section-text h2 {
+  margin-bottom: 10px;
 }
 
-/* CONTACT */
-.contact {
-  padding: 40px;
-  text-align: center;
+/* REVERSE (image right) */
+.reverse {
+  flex-direction: row-reverse;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .section {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 </style>
 
@@ -72,33 +81,42 @@ body {
   <video autoplay muted loop>
     <source src="https://cdn.shopify.com/videos/c/o/v/c7830c6bfb704c078786e6954d93e900.mp4">
   </video>
-
   <div class="hero-text">
     <h1>LUNALIQ COFFEE</h1>
   </div>
 </div>
 
-<!-- ABOUT -->
+<!-- SECTION 1 -->
 
-<div class="about">
-  <h2>About</h2>
-  <p>Cozy coffee and aesthetic moments.</p>
-</div>
-
-<!-- GALLERY -->
-
-<div class="gallery">
+<div class="section">
   <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/imgi_48_496598286_17942634347995359_2385501179447426054_n.jpg?v=1776708817">
-  <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/imgi_52_545018420_17957024291995359_2100240977493378914_n.jpg?v=1776708816">
-  <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/imgi_53_546500703_17957024300995359_3799390271029334196_n.jpg?v=1776708816">
-  <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/imgi_35_528653574_17953049207995359_8994257734604054174_n.jpg?v=1776708816">
+
+  <div class="section-text">
+    <h2>Cozy Atmosphere</h2>
+    <p>Warm light, calm vibes, and aesthetic coffee moments.</p>
+  </div>
 </div>
 
-<!-- CONTACT -->
+<!-- SECTION 2 -->
 
-<div class="contact">
-  <h2>Contact</h2>
-  <p>Email: example@email.com</p>
+<div class="section reverse">
+  <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/imgi_52_545018420_17957024291995359_2100240977493378914_n.jpg?v=1776708816">
+
+  <div class="section-text">
+    <h2>Premium Coffee</h2>
+    <p>Every cup is crafted with care and attention to detail.</p>
+  </div>
+</div>
+
+<!-- SECTION 3 -->
+
+<div class="section">
+  <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/imgi_53_546500703_17957024300995359_3799390271029334196_n.jpg?v=1776708816">
+
+  <div class="section-text">
+    <h2>Aesthetic Moments</h2>
+    <p>Perfect place to relax, take photos, and enjoy your time.</p>
+  </div>
 </div>
 
 </body>
