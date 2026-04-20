@@ -74,3 +74,150 @@
             height: 550px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
+        .about-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .about-img img:hover { transform: scale(1.05); }
+        
+        .about-content { flex: 1; }
+        .about-content h2 { font-size: 3rem; margin-bottom: 25px; line-height: 1.2; }
+        .about-content p { font-size: 1.1rem; color: #5d4e4a; margin-bottom: 20px; }
+
+        /* GRID SECTION */
+        .container { max-width: 1200px; margin: 120px auto; padding: 0 20px; text-align: center; }
+        .container h2 { font-size: 2.8rem; margin-bottom: 60px; }
+        
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 35px; }
+        .grid-item { 
+            background: white; 
+            border-radius: 20px; 
+            overflow: hidden; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.03);
+            transition: 0.4s;
+            padding-bottom: 25px;
+        }
+        .grid-item:hover { transform: translateY(-15px); }
+        .grid-item img { width: 100%; height: 380px; object-fit: cover; }
+        .grid-item h3 { padding: 25px 20px 10px; font-size: 1.6rem; }
+        .grid-item p { padding: 0 25px; font-size: 0.95rem; color: var(--accent-color); }
+
+        /* MENU SECTION (MODERN LOOK) */
+        .menu-section { background: white; padding: 120px 20px; }
+        .menu-container { max-width: 800px; margin: 0 auto; }
+        .menu-header { text-align: center; margin-bottom: 60px; }
+        .menu-header h2 { font-size: 3rem; margin-bottom: 10px; }
+        .menu-header div { width: 60px; height: 2px; background: var(--accent-color); margin: 0 auto; }
+
+        .menu-item { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: baseline;
+            padding: 18px 0; 
+            border-bottom: 1px solid #f5f5f5; 
+        }
+        .menu-item .name { font-size: 1.15rem; font-weight: 400; }
+        .menu-item .line { flex-grow: 1; border-bottom: 1px dashed #ddd; margin: 0 15px; }
+        .menu-item .price { font-weight: 600; color: #5d4037; }
+
+        /* FOOTER */
+        footer {
+            background: #1a1412;
+            color: #d8c3a5;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            max-width: 1100px;
+            margin: 0 auto 50px;
+            gap: 50px;
+        }
+        .footer-logo { font-family: 'Playfair Display', serif; font-size: 2.5rem; letter-spacing: 8px; font-style: italic; }
+        .footer-column h4 { text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; color: white; }
+
+        @media(max-width: 900px) {
+            .about { flex-direction: column; text-align: center; }
+            .grid, .footer-grid { grid-template-columns: 1fr; }
+            .about-img { height: 350px; width: 100%; border-radius: 20px; }
+            .hero-text h1 { letter-spacing: 8px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <video autoplay muted loop playsinline>
+            <source src="https://cdn.shopify.com/videos/c/o/v/e0c2c37e20f64b7a8fc34f4719a6f81a.mp4" type="video/mp4">
+        </video>
+        <div class="hero-text">
+            <h1>LUNALIQ</h1>
+        </div>
+    </div>
+
+    <section class="about">
+        <div class="about-img">
+            <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/imgi_48_496598286_17942634347995359_2385501179447426054_n.jpg?v=1776708817" alt="Coffee Brewing">
+        </div>
+        <div class="about-content">
+            <h2>Crafting the Perfect Morning</h2>
+            <p>At Lunaliq, we believe that coffee is an art form. From the first beam of morning light to the final pour, we focus on every detail to ensure your experience is nothing short of magical.</p>
+            <p>Our beans are ethically sourced and roasted to perfection, bringing out the unique character of every cup we serve in our cozy Yerevan sanctuary.</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <h2>Our Coffee Philosophy</h2>
+        <div class="grid">
+            <div class="grid-item">
+                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/imgi_52_545018420_17957024291995359_2100240977493378914_n.jpg?v=1776708816">
+                <h3>Aesthetic Spaces</h3>
+                <p>Designed for those who seek inspiration in every corner.</p>
+            </div>
+            <div class="grid-item">
+                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/imgi_53_546500703_17957024300995359_3799390271029334196_n.jpg?v=1776708816">
+                <h3>Expert Baristas</h3>
+                <p>Passionately brewed drinks tailored to your taste.</p>
+            </div>
+            <div class="grid-item">
+                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/imgi_48_496598286_17942634347995359_2385501179447426054_n.jpg?v=1776708817">
+                <h3>Pure Quality</h3>
+                <p>Selected premium Arabica for a rich and smooth finish.</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="menu-section">
+        <div class="menu-container">
+            <div class="menu-header">
+                <h2>The Coffee Menu</h2>
+                <div></div>
+            </div>
+            <div class="menu-item"><span class="name">Espresso</span><span class="line"></span><span class="price">1500 AMD</span></div>
+            <div class="menu-item"><span class="name">Double Espresso</span><span class="line"></span><span class="price">1800 AMD</span></div>
+            <div class="menu-item"><span class="name">Americano</span><span class="line"></span><span class="price">1800 AMD</span></div>
+            <div class="menu-item"><span class="name">Cappuccino</span><span class="line"></span><span class="price">2200 AMD</span></div>
+            <div class="menu-item"><span class="name">Caffè Latte</span><span class="line"></span><span class="price">2400 AMD</span></div>
+            <div class="menu-item"><span class="name">Flat White</span><span class="line"></span><span class="price">2400 AMD</span></div>
+            <div class="menu-item"><span class="name">Matcha Latte</span><span class="line"></span><span class="price">2500 AMD</span></div>
+            <div class="menu-item"><span class="name">Signature Cold Brew</span><span class="line"></span><span class="price">2600 AMD</span></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h4>Location</h4>
+                <p>123 Coffee Avenue<br>Yerevan, Armenia</p>
+            </div>
+            <div class="footer-logo">LUNALIQ</div>
+            <div class="footer-column">
+                <h4>Hours</h4>
+                <p>Monday — Friday: 8:00 - 22:00<br>Saturday — Sunday: 9:00 - 23:00</p>
+            </div>
+        </div>
+        <div style="margin-top: 40px; opacity: 0.6; font-size: 0.85rem;">
+            <p>&copy; 2026 LUNALIQ COFFEE. Handcrafted for your aesthetic moments.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
