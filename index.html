@@ -1,57 +1,123 @@
 <!DOCTYPE html>
-<html lang="hy">
+
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lunaliq Coffee | Official</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;1,500&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lunaliq Coffee</title>
 
-    <style>
-        body { margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; background-color: #fdfaf5; color: #3e2723; }
-        
-        /* HEADER WITH CENTERED LOGO */
-        header {
-            background-color: #fdfaf5;
-            padding: 30px 0;
-            text-align: center;
-            border-bottom: 1px solid #eee;
-        }
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            letter-spacing: 10px;
-            text-transform: uppercase;
-            text-decoration: none;
-            color: #3e2723;
-            font-weight: 400;
-        }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f3ef;
+}
 
-        /* HERO SECTION */
-        .hero {
-            position: relative;
-            height: 80vh; /* Մի քիչ փոքրացրել եմ, որ լոգոն երևա */
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .hero video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .hero-overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.2); /* Թեթև մութացում վիդեոյի վրա */
-        }
+/* VIDEO */
+.hero {
+  position: relative;
+  height: 100vh;
+}
+.hero video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
 
-        /* CONTENT SECTIONS */
-        .container { max-width: 1100px; margin: 80px auto; padding: 0 20px; text-align: center; }
-        .about { display: flex; align-items: center; gap: 50px; text-align: left; margin-bottom: 100px; }
-        .about-img { flex: 1; height: 500px; border-radius: 250px 250px 0 0; overflow: hidden; }
-        .about-img img { width: 100%; height: 100%; object-fit: cover; }
-        .about-text { flex: 1; }
+/* SECTION STYLE */
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 10%;
+}
 
-        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 50px; }
-        .grid-item img { width: 100%; height: 350px; object-fit: cover; border-radius: 15
+/* IMAGE */
+.section img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* TEXT */
+.section-text {
+  max-width: 400px;
+}
+
+.section-text h2 {
+  margin-bottom: 10px;
+}
+
+/* REVERSE (image right) */
+.reverse {
+  flex-direction: row-reverse;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .section {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- VIDEO -->
+
+<div class="hero">
+  <video autoplay muted loop>
+    <source src="https://cdn.shopify.com/videos/c/o/v/c7830c6bfb704c078786e6954d93e900.mp4">
+  </video>
+  <div class="hero-text">
+    <h1>LUNALIQ COFFEE</h1>
+  </div>
+</div>
+
+<!-- SECTION 1 -->
+
+<div class="section">
+  <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/imgi_48_496598286_17942634347995359_2385501179447426054_n.jpg?v=1776708817">
+
+  <div class="section-text">
+    <h2>Cozy Atmosphere</h2>
+    <p>Warm light, calm vibes, and aesthetic coffee moments.</p>
+  </div>
+</div>
+
+<!-- SECTION 2 -->
+
+<div class="section reverse">
+  <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/imgi_52_545018420_17957024291995359_2100240977493378914_n.jpg?v=1776708816">
+
+  <div class="section-text">
+    <h2>Premium Coffee</h2>
+    <p>Every cup is crafted with care and attention to detail.</p>
+  </div>
+</div>
+
+<!-- SECTION 3 -->
+
+<div class="section">
+  <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/imgi_53_546500703_17957024300995359_3799390271029334196_n.jpg?v=1776708816">
+
+  <div class="section-text">
+    <h2>Aesthetic Moments</h2>
+    <p>Perfect place to relax, take photos, and enjoy your time.</p>
+  </div>
+</div>
+
+</body>
+</html>
