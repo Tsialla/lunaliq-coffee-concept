@@ -4,45 +4,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lunaliq Coffee Video</title>
+<title>Lunaliq Coffee Experience</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:#f5f3ef;color:#1a1a1a;}
 
-body{
-  font-family:'Inter',sans-serif;
-  background:#000;
-  color:white;
-}
-
-/* FULL SCREEN VIDEO */
-.video-page{
+/* HERO VIDEO */
+.hero{
   position:relative;
   height:100vh;
   overflow:hidden;
 }
-
-.video-page video{
+.hero video{
   position:absolute;
   width:100%;
   height:100%;
   object-fit:cover;
-  top:50%;
-  left:50%;
+  top:50%;left:50%;
   transform:translate(-50%,-50%);
 }
-
-/* OVERLAY */
 .overlay{
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,0.3);
+  background:rgba(0,0,0,0.4);
 }
-
-/* TEXT */
-.content{
+.hero-content{
   position:relative;
   z-index:2;
   height:100%;
@@ -50,35 +39,85 @@ body{
   flex-direction:column;
   justify-content:center;
   align-items:center;
+  color:white;
   text-align:center;
 }
-
-.content h1{
+.hero-content h1{
   font-family:'Playfair Display',serif;
   font-size:48px;
-  letter-spacing:4px;
 }
-
-.content a{
+.btn{
   margin-top:20px;
   padding:12px 30px;
   background:#C3B098;
-  border-radius:30px;
   color:white;
+  border-radius:30px;
   text-decoration:none;
 }
 
-/* BACK BUTTON */
-.back{
-  position:absolute;
-  top:20px;
-  left:20px;
-  z-index:3;
-  background:rgba(0,0,0,0.5);
-  padding:10px 20px;
-  border-radius:20px;
+/* ABOUT */
+.about{padding:100px 20px;}
+.about-container{
+  max-width:1100px;margin:auto;
+  display:flex;gap:40px;align-items:center;
+}
+.about-text{flex:1;}
+.about-text h2{
+  font-family:'Playfair Display',serif;
+  font-size:36px;margin-bottom:20px;
+}
+.about-text p{opacity:0.8;margin-bottom:15px;}
+.about-image{flex:1;}
+.about-image img{
+  width:100%;
+  height:400px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+/* GALLERY */
+.gallery{padding:80px 20px;text-align:center;}
+.gallery h2{
+  margin-bottom:30px;
+  font-family:'Playfair Display',serif;
+}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  max-width:1100px;margin:auto;
+}
+.gallery-grid img{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+  border-radius:14px;
+  transition:0.4s;
+}
+.gallery-grid img:hover{
+  transform:scale(1.05);
+}
+
+/* CONTACT */
+.contact{padding:80px 20px;text-align:center;}
+input,textarea{
+  width:100%;max-width:500px;
+  padding:12px;margin:10px 0;
+}
+
+/* FOOTER */
+footer{
+  background:#1a1a1a;
   color:white;
-  text-decoration:none;
+  text-align:center;
+  padding:20px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .about-container{flex-direction:column;text-align:center;}
+  .gallery-grid{grid-template-columns:1fr 1fr;}
+  .hero-content h1{font-size:30px;}
 }
 </style>
 
@@ -86,20 +125,66 @@ body{
 
 <body>
 
-<a href="index.html" class="back">← Back</a>
+<!-- VIDEO HERO -->
 
-<section class="video-page">
+<section class="hero">
   <video autoplay muted loop playsinline>
     <source src="https://cdn.shopify.com/videos/c/o/v/c7830c6bfb704c078786e6954d93e900.mp4">
   </video>
 
   <div class="overlay"></div>
 
-  <div class="content">
+  <div class="hero-content">
     <h1>LUNALIQ EXPERIENCE</h1>
-    <a href="index.html">Back to Home</a>
+    <p>Feel the atmosphere</p>
+    <a href="index.html" class="btn">Back Home</a>
   </div>
 </section>
+
+<!-- ABOUT -->
+
+<section class="about">
+  <div class="about-container">
+    <div class="about-text">
+      <h2>About Lunaliq</h2>
+      <p>We create aesthetic coffee moments filled with warmth and calm energy.</p>
+      <p>Every detail is designed to give you a cozy and memorable experience.</p>
+    </div>
+
+```
+<div class="about-image">
+  <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/imgi_40_504466193_17947754666995359_5188310655301726000_n.jpg?v=1776708817">
+</div>
+```
+
+  </div>
+</section>
+
+<!-- GALLERY -->
+
+<section class="gallery">
+  <h2>Moments</h2>
+
+  <div class="gallery-grid">
+    <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/imgi_48_496598286_17942634347995359_2385501179447426054_n.jpg?v=1776708817">
+    <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/imgi_52_545018420_17957024291995359_2100240977493378914_n.jpg?v=1776708816">
+    <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/imgi_53_546500703_17957024300995359_3799390271029334196_n.jpg?v=1776708816">
+    <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/imgi_35_528653574_17953049207995359_8994257734604054174_n.jpg?v=1776708816">
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact">
+  <h2>Contact</h2>
+  <input placeholder="Name">
+  <input placeholder="Email">
+  <textarea placeholder="Message"></textarea>
+</section>
+
+<footer>
+  © 2026 Lunaliq Coffee
+</footer>
 
 </body>
 </html>
