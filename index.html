@@ -3,63 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lunaliq Coffee | 3 Arches Menu</title>
+    <title>Lunaliq Coffee | Official</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;1,500&display=swap" rel="stylesheet">
 
     <style>
+        * { box-sizing: border-box; }
         body { margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; background-color: #fdfaf5; color: #3e2723; }
         
-        header { background-color: #fdfaf5; padding: 30px 0; text-align: center; border-bottom: 1px solid #f0ece6; }
-        .logo { font-family: 'Playfair Display', serif; font-size: 2.2rem; letter-spacing: 12px; text-transform: uppercase; color: #3e2723; }
+        header { background-color: #fdfaf5; padding: 40px 0; text-align: center; border-bottom: 1px solid #f0ece6; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 2.5rem; letter-spacing: 12px; text-transform: uppercase; }
 
-        .hero { position: relative; height: 60vh; overflow: hidden; background-color: #000; }
+        .hero { position: relative; height: 60vh; overflow: hidden; background: #000; }
         .hero video { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
 
-        .mid-video { width: 100%; height: 50vh; margin: 60px 0; overflow: hidden; position: relative; }
+        .mid-video { width: 100%; height: 55vh; margin: 80px 0; overflow: hidden; position: relative; background: #000; }
         .mid-video video { width: 100%; height: 100%; object-fit: cover; }
 
-        .container { max-width: 1200px; margin: 60px auto; padding: 0 20px; text-align: center; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; text-align: center; }
 
-        /* 3 ARCHES DESIGN */
+        /* 3 ARCHES SECTION */
+        .menu-section { padding: 80px 0; }
+        .menu-title { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 60px; }
+
         .menu-wrapper {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap; /* Հեռախոսով իրար տակ կգան */
-            margin-top: 50px;
+            align-items: flex-start;
+            gap: 40px;
+            flex-wrap: wrap; /* Սա հեռախոսի համար է */
         }
 
-        .arch {
-            background: #ffffff;
-            width: 320px;
-            padding: 60px 30px 40px;
-            /* Սա սարքում է կամարի տեսքը */
-            border-radius: 200px 200px 30px 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        /* ՍԱ ԿԱՄԱՐՆ Է */
+        .arch-card {
+            background: #ffffff !important;
+            width: 340px;
+            padding: 70px 35px 50px;
+            border-radius: 200px 200px 40px 40px !important; /* ԿԱՄԱՐԻ ՏԵՍՔ */
+            box-shadow: 0 15px 45px rgba(0,0,0,0.04);
             border: 1px solid #eee;
-            transition: 0.3s;
+            margin-bottom: 40px;
         }
 
-        .arch:hover { transform: translateY(-10px); }
-
-        .arch h3 {
+        .arch-card h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            margin-bottom: 30px;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
             color: #8d7b68;
         }
 
-        .item {
+        .menu-item {
             display: flex;
             justify-content: space-between;
-            padding: 12px 0;
+            padding: 15px 0;
             border-bottom: 1px dashed #ddd;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
 
         .price { font-weight: 600; color: #a68b6d; }
 
-        footer { background: #1a1412; color: #d8c3a5; padding: 60px 20px; text-align: center; margin-top: 100px; }
+        footer { background: #1a1412; color: #d8c3a5; padding: 80px 20px; text-align: center; margin-top: 50px; }
     </style>
 </head>
 <body>
@@ -81,41 +83,43 @@
     </div>
 
     <div class="container">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem;">The Menu</h2>
-        
-        <div class="menu-wrapper">
-            <div class="arch">
-                <h3>Coffee</h3>
-                <div class="item"><span>Espresso</span><span class="price">1500</span></div>
-                <div class="item"><span>Americano</span><span class="price">1800</span></div>
-                <div class="item"><span>Cappuccino</span><span class="price">2200</span></div>
-                <div class="item"><span>Caffè Latte</span><span class="price">2400</span></div>
-                <div class="item"><span>Flat White</span><span class="price">2500</span></div>
-            </div>
+        <div class="menu-section">
+            <h2 class="menu-title">Selection</h2>
+            
+            <div class="menu-wrapper">
+                <div class="arch-card">
+                    <h3>Coffee</h3>
+                    <div class="menu-item"><span>Espresso</span><span class="price">1500</span></div>
+                    <div class="menu-item"><span>Americano</span><span class="price">1800</span></div>
+                    <div class="menu-item"><span>Cappuccino</span><span class="price">2200</span></div>
+                    <div class="menu-item"><span>Caffè Latte</span><span class="price">2400</span></div>
+                    <div class="menu-item"><span>Flat White</span><span class="price">2500</span></div>
+                </div>
 
-            <div class="arch">
-                <h3>Lunch</h3>
-                <div class="item"><span>Avocado Toast</span><span class="price">3200</span></div>
-                <div class="item"><span>Club Sandwich</span><span class="price">3500</span></div>
-                <div class="item"><span>Greek Salad</span><span class="price">2800</span></div>
-                <div class="item"><span>Omelette</span><span class="price">2400</span></div>
-                <div class="item"><span>Brunch Bowl</span><span class="price">3600</span></div>
-            </div>
+                <div class="arch-card">
+                    <h3>Lunch</h3>
+                    <div class="menu-item"><span>Avocado Toast</span><span class="price">3200</span></div>
+                    <div class="menu-item"><span>Club Sandwich</span><span class="price">3500</span></div>
+                    <div class="menu-item"><span>Greek Salad</span><span class="price">2800</span></div>
+                    <div class="menu-item"><span>Brunch Bowl</span><span class="price">3600</span></div>
+                    <div class="menu-item"><span>Classic Omelette</span><span class="price">2400</span></div>
+                </div>
 
-            <div class="arch">
-                <h3>Sweets</h3>
-                <div class="item"><span>San Sebastian</span><span class="price">2800</span></div>
-                <div class="item"><span>Honey Cake</span><span class="price">2200</span></div>
-                <div class="item"><span>Tiramisu</span><span class="price">2900</span></div>
-                <div class="item"><span>Croissant</span><span class="price">1400</span></div>
-                <div class="item"><span>Apple Tart</span><span class="price">2300</span></div>
+                <div class="arch-card">
+                    <h3>Sweets</h3>
+                    <div class="menu-item"><span>San Sebastian</span><span class="price">2800</span></div>
+                    <div class="menu-item"><span>Honey Cake</span><span class="price">2200</span></div>
+                    <div class="menu-item"><span>Tiramisu</span><span class="price">2900</span></div>
+                    <div class="menu-item"><span>Classic Croissant</span><span class="price">1400</span></div>
+                    <div class="menu-item"><span>Apple Tart</span><span class="price">2300</span></div>
+                </div>
             </div>
         </div>
     </div>
 
     <footer>
-        <div class="logo" style="color: #d8c3a5; font-size: 1.8rem;">LUNALIQ</div>
-        <p style="opacity: 0.5; margin-top: 15px;">Yerevan, Armenia | Open Daily 09:00 — 22:00</p>
+        <div class="logo" style="color: #d8c3a5; font-size: 2rem;">LUNALIQ</div>
+        <p style="opacity: 0.5; margin-top: 20px;">Yerevan, Armenia | Daily 09:00 — 22:00</p>
     </footer>
 
 </body>
