@@ -8,60 +8,51 @@
 
     <style>
         * { box-sizing: border-box; }
-        body { margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; background-color: #fdfaf5; color: #3e2723; }
+        body { margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; background-color: #fdfaf5; color: #3e2723; overflow-x: hidden; }
         
         header { background-color: #fdfaf5; padding: 40px 0; text-align: center; border-bottom: 1px solid #f0ece6; }
         .logo { font-family: 'Playfair Display', serif; font-size: 2.5rem; letter-spacing: 12px; text-transform: uppercase; }
 
-        .hero { position: relative; height: 60vh; overflow: hidden; background: #000; }
+        /* HERO VIDEO */
+        .hero { position: relative; height: 70vh; overflow: hidden; background: #000; }
         .hero video { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
 
-        .mid-video { width: 100%; height: 55vh; margin: 80px 0; overflow: hidden; position: relative; background: #000; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; text-align: center; }
+
+        /* ABOUT SECTION */
+        .about { display: flex; align-items: center; gap: 70px; text-align: left; margin: 100px 0; }
+        .about-img { flex: 1; height: 550px; border-radius: 300px 300px 20px 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.05); }
+        .about-img img { width: 100%; height: 100%; object-fit: cover; }
+        .about-text { flex: 1; }
+        .about-text h2 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 20px; }
+        .about-text p { font-size: 1.1rem; line-height: 1.8; color: #5d4e4a; }
+
+        /* ATMOSPHERE GRID (NKARNERY) */
+        .grid-title { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin: 80px 0 50px; }
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 100px; }
+        .grid-item img { width: 100%; height: 400px; object-fit: cover; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.03); }
+        .grid-item h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-top: 20px; font-style: italic; }
+
+        /* MID VIDEO */
+        .mid-video { width: 100%; height: 60vh; margin: 80px 0; overflow: hidden; position: relative; background: #000; }
         .mid-video video { width: 100%; height: 100%; object-fit: cover; }
+        .video-caption { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-family: 'Playfair Display', serif; font-size: 2.5rem; letter-spacing: 10px; text-transform: uppercase; text-shadow: 0 2px 20px rgba(0,0,0,0.6); }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; text-align: center; }
-
-        /* 3 ARCHES SECTION */
-        .menu-section { padding: 80px 0; }
-        .menu-title { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 60px; }
-
-        .menu-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            gap: 40px;
-            flex-wrap: wrap; /* Սա հեռախոսի համար է */
-        }
-
-        /* ՍԱ ԿԱՄԱՐՆ Է */
-        .arch-card {
-            background: #ffffff !important;
-            width: 340px;
-            padding: 70px 35px 50px;
-            border-radius: 200px 200px 40px 40px !important; /* ԿԱՄԱՐԻ ՏԵՍՔ */
-            box-shadow: 0 15px 45px rgba(0,0,0,0.04);
-            border: 1px solid #eee;
-            margin-bottom: 40px;
-        }
-
-        .arch-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            margin-bottom: 40px;
-            color: #8d7b68;
-        }
-
-        .menu-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 15px 0;
-            border-bottom: 1px dashed #ddd;
-            font-size: 0.95rem;
-        }
-
+        /* 3 ARCHES MENU */
+        .menu-wrapper { display: flex; justify-content: center; align-items: flex-start; gap: 30px; flex-wrap: wrap; padding-bottom: 100px; }
+        .arch-card { background: #ffffff; width: 330px; padding: 70px 30px 50px; border-radius: 200px 200px 30px 30px; box-shadow: 0 15px 45px rgba(0,0,0,0.04); border: 1px solid #eee; }
+        .arch-card h3 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 40px; color: #8d7b68; }
+        .menu-item { display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px dashed #ddd; font-size: 0.9rem; }
         .price { font-weight: 600; color: #a68b6d; }
 
-        footer { background: #1a1412; color: #d8c3a5; padding: 80px 20px; text-align: center; margin-top: 50px; }
+        footer { background: #1a1412; color: #d8c3a5; padding: 80px 20px; text-align: center; }
+
+        @media (max-width: 900px) {
+            .about { flex-direction: column; text-align: center; }
+            .grid { grid-template-columns: 1fr; }
+            .about-img { height: 400px; width: 100%; }
+            .menu-wrapper { gap: 40px; }
+        }
     </style>
 </head>
 <body>
@@ -76,51 +67,22 @@
         </video>
     </div>
 
-    <div class="mid-video">
-        <video autoplay muted loop playsinline>
-            <source src="https://cdn.shopify.com/videos/c/o/v/42c8e673c11142bd8ced8b5b6263e544.mp4" type="video/mp4">
-        </video>
-    </div>
-
     <div class="container">
-        <div class="menu-section">
-            <h2 class="menu-title">Selection</h2>
-            
-            <div class="menu-wrapper">
-                <div class="arch-card">
-                    <h3>Coffee</h3>
-                    <div class="menu-item"><span>Espresso</span><span class="price">1500</span></div>
-                    <div class="menu-item"><span>Americano</span><span class="price">1800</span></div>
-                    <div class="menu-item"><span>Cappuccino</span><span class="price">2200</span></div>
-                    <div class="menu-item"><span>Caffè Latte</span><span class="price">2400</span></div>
-                    <div class="menu-item"><span>Flat White</span><span class="price">2500</span></div>
-                </div>
-
-                <div class="arch-card">
-                    <h3>Lunch</h3>
-                    <div class="menu-item"><span>Avocado Toast</span><span class="price">3200</span></div>
-                    <div class="menu-item"><span>Club Sandwich</span><span class="price">3500</span></div>
-                    <div class="menu-item"><span>Greek Salad</span><span class="price">2800</span></div>
-                    <div class="menu-item"><span>Brunch Bowl</span><span class="price">3600</span></div>
-                    <div class="menu-item"><span>Classic Omelette</span><span class="price">2400</span></div>
-                </div>
-
-                <div class="arch-card">
-                    <h3>Sweets</h3>
-                    <div class="menu-item"><span>San Sebastian</span><span class="price">2800</span></div>
-                    <div class="menu-item"><span>Honey Cake</span><span class="price">2200</span></div>
-                    <div class="menu-item"><span>Tiramisu</span><span class="price">2900</span></div>
-                    <div class="menu-item"><span>Classic Croissant</span><span class="price">1400</span></div>
-                    <div class="menu-item"><span>Apple Tart</span><span class="price">2300</span></div>
-                </div>
+        <section class="about">
+            <div class="about-img">
+                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/imgi_48_496598286_17942634347995359_2385501179447426054_n.jpg?v=1776708817">
             </div>
-        </div>
-    </div>
+            <div class="about-text">
+                <h2>Our Ritual</h2>
+                <p>Coffee is more than a caffeine fix; it's a daily ritual. At Lunaliq, we've mastered the art of the perfect pour in a space designed to inspire your best moments.</p>
+            </div>
+        </section>
 
-    <footer>
-        <div class="logo" style="color: #d8c3a5; font-size: 2rem;">LUNALIQ</div>
-        <p style="opacity: 0.5; margin-top: 20px;">Yerevan, Armenia | Daily 09:00 — 22:00</p>
-    </footer>
-
-</body>
-</html>
+        <h2 class="grid-title">Atmosphere</h2>
+        <div class="grid">
+            <div class="grid-item">
+                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/imgi_52_545018420_17957024291995359_2100240977493378914_n.jpg?v=1776708816">
+                <h3>Interior</h3>
+            </div>
+            <div class="grid-item">
+                <img src="
