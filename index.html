@@ -14,54 +14,13 @@
         header { background-color: #fdfaf5; padding: 40px 0; text-align: center; border-bottom: 1px solid #f0ece6; }
         .logo { font-family: 'Playfair Display', serif; font-size: 2.5rem; letter-spacing: 12px; text-transform: uppercase; }
 
-        /* 1. HERO VIDEO */
+        /* HERO VIDEO */
         .hero { position: relative; height: 70vh; overflow: hidden; background: #000; }
         .hero video { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
 
-        /* --- NEW: INFINITE IMAGE MARQUEE (ՎԱԶՈՂ ՏՈՂ) --- */
-        .marquee {
-            width: 100%;
-            background-color: #fff;
-            overflow: hidden; /* Թաքցնում է դուրս եկած մասը */
-            padding: 20px 0;
-            border-bottom: 1px solid #f0ece6;
-            position: relative;
-        }
-
-        /* Կոնտեյներ, որը պարունակում է նկարների 2 լրացված շարք */
-        .marquee-content {
-            display: flex;
-            width: calc(200px * 20); /* Ապահովում է բավարար լայնություն 2 շարքի համար (10+10) */
-            animation: marquee-scroll 40s linear infinite; /* Անիմացիան */
-        }
-
-        /* Նկարների յուրաքանչյուր շարքը */
-        .marquee-slide {
-            display: flex;
-            gap: 15px; /* Նկարների միջև բացատը */
-            padding-right: 15px; /* Ավելացնում է բացատ վերջին նկարից հետո */
-        }
-
-        /* Նկարի ոճը */
-        .marquee img {
-            width: 200px; /* Նկարի լայնությունը */
-            height: 200px; /* Նկարի բարձրությունը (սարքում է քառակուսի) */
-            object-fit: cover; /* Պահպանում է նկարի համաչափությունը */
-            border-radius: 10px; /* Կլորացված անկյուններ */
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            flex-shrink: 0; /* Չի թողնում նկարը սեղմվի */
-        }
-
-        /* Անիմացիայի սահմանումը */
-        @keyframes marquee-scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); } /* Տեղաշարժվում է մինչև առաջին շարքի վերջը */
-        }
-        /* --- END OF NEW MARQUEE --- */
-
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; text-align: center; }
 
-        /* 2. ABOUT SECTION */
+        /* ABOUT SECTION */
         .about { display: flex; align-items: center; gap: 70px; text-align: left; margin: 100px 0; }
         .about-img { flex: 1; height: 550px; border-radius: 300px 300px 20px 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.05); }
         .about-img img { width: 100%; height: 100%; object-fit: cover; }
@@ -69,34 +28,43 @@
         .about-text h2 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 20px; }
         .about-text p { font-size: 1.1rem; line-height: 1.8; color: #5d4e4a; }
 
-        /* 3. ATMOSPHERE GRID */
+        /* ATMOSPHERE GRID */
         .grid-title { font-family: 'Playfair Display', serif; font-size: 2.8rem; margin: 80px 0 50px; }
         .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 100px; }
         .grid-item img { width: 100%; height: 400px; object-fit: cover; border-radius: 20px; }
         .grid-item h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-top: 20px; font-style: italic; }
 
-        /* 4. MID VIDEO (BEFORE MENU) */
+        /* MID VIDEO */
         .mid-video { width: 100%; height: 60vh; margin: 80px 0; overflow: hidden; position: relative; background: #000; }
         .mid-video video { width: 100%; height: 100%; object-fit: cover; }
         .video-caption { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-family: 'Playfair Display', serif; font-size: 2.5rem; letter-spacing: 10px; text-transform: uppercase; text-shadow: 0 2px 20px rgba(0,0,0,0.6); text-align: center; width: 100%; }
 
-        /* 5. 3 ARCHES MENU */
-        .menu-wrapper { display: flex; justify-content: center; align-items: flex-start; gap: 30px; flex-wrap: wrap; margin-top: 50px; padding-bottom: 100px; }
+        /* 3 ARCHES MENU */
+        .menu-wrapper { display: flex; justify-content: center; align-items: flex-start; gap: 30px; flex-wrap: wrap; margin-top: 50px; padding-bottom: 60px; }
         .arch-card { background: #ffffff; width: 330px; padding: 70px 30px 50px; border-radius: 200px 200px 30px 30px; box-shadow: 0 15px 45px rgba(0,0,0,0.04); border: 1px solid #eee; margin-bottom: 30px; }
         .arch-card h3 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 40px; color: #8d7b68; }
         .menu-item { display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px dashed #ddd; font-size: 0.95rem; }
         .price { font-weight: 600; color: #a68b6d; }
 
-        /* 6. FOOTER */
+        /* INFINITE MARQUEE (MENUI TAKY) */
+        .marquee { width: 100%; background-color: #fdfaf5; overflow: hidden; padding: 60px 0 100px; position: relative; }
+        .marquee-content { display: flex; width: max-content; animation: scroll 35s linear infinite; }
+        .marquee-slide { display: flex; gap: 20px; padding-right: 20px; }
+        .marquee img { width: 250px; height: 250px; object-fit: cover; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); flex-shrink: 0; }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* FOOTER */
         footer { background: #1a1412; color: #d8c3a5; padding: 80px 20px; text-align: center; }
 
         @media (max-width: 900px) {
             .about { flex-direction: column; text-align: center; }
             .grid { grid-template-columns: 1fr; }
             .about-img { height: 400px; width: 100%; }
-            /* Փոքրացնում ենք նկարները հեռախոսի համար */
-            .marquee img { width: 150px; height: 150px; }
-            .marquee-content { width: calc(150px * 20); }
+            .marquee img { width: 180px; height: 180px; }
         }
     </style>
 </head>
@@ -112,17 +80,93 @@
         </video>
     </div>
 
+    <div class="container">
+        <section class="about">
+            <div class="about-img">
+                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/imgi_48_496598286_17942634347995359_2385501179447426054_n.jpg?v=1776708817" alt="Coffee">
+            </div>
+            <div class="about-text">
+                <h2>Our Ritual</h2>
+                <p>Coffee is more than a caffeine fix; it's a daily ritual. At Lunaliq, we've mastered the art of the perfect pour in a space designed to inspire.</p>
+            </div>
+        </section>
+
+        <h2 class="grid-title">Atmosphere</h2>
+        <div class="grid">
+            <div class="grid-item"><img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/imgi_52_545018420_17957024291995359_2100240977493378914_n.jpg?v=1776708816"><h3>Interior</h3></div>
+            <div class="grid-item"><img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/imgi_53_546500703_17957024300995359_3799390271029334196_n.jpg?v=1776708816"><h3>The Brew</h3></div>
+            <div class="grid-item"><img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/imgi_48_496598286_17942634347995359_2385501179447426054_n.jpg?v=1776708817"><h3>Detail</h3></div>
+        </div>
+    </div>
+
+    <div class="mid-video">
+        <video autoplay muted loop playsinline>
+            <source src="https://cdn.shopify.com/videos/c/o/v/42c8e673c11142bd8ced8b5b6263e544.mp4" type="video/mp4">
+        </video>
+        <div class="video-caption">Art of Taste</div>
+    </div>
+
+    <div class="container">
+        <h2 class="grid-title" style="margin-top: 100px;">Selection</h2>
+        <div class="menu-wrapper">
+            <div class="arch-card">
+                <h3>Coffee</h3>
+                <div class="menu-item"><span>Espresso</span><span class="price">1500</span></div>
+                <div class="menu-item"><span>Americano</span><span class="price">1800</span></div>
+                <div class="menu-item"><span>Cappuccino</span><span class="price">2200</span></div>
+                <div class="menu-item"><span>Caffè Latte</span><span class="price">2400</span></div>
+                <div class="menu-item"><span>Flat White</span><span class="price">2500</span></div>
+            </div>
+            <div class="arch-card">
+                <h3>Lunch</h3>
+                <div class="menu-item"><span>Avocado Toast</span><span class="price">3200</span></div>
+                <div class="menu-item"><span>Club Sandwich</span><span class="price">3500</span></div>
+                <div class="menu-item"><span>Greek Salad</span><span class="price">2800</span></div>
+                <div class="menu-item"><span>Brunch Bowl</span><span class="price">3600</span></div>
+                <div class="menu-item"><span>Classic Omelette</span><span class="price">2400</span></div>
+            </div>
+            <div class="arch-card">
+                <h3>Sweets</h3>
+                <div class="menu-item"><span>San Sebastian</span><span class="price">2800</span></div>
+                <div class="menu-item"><span>Honey Cake</span><span class="price">2200</span></div>
+                <div class="menu-item"><span>Tiramisu</span><span class="price">2900</span></div>
+                <div class="menu-item"><span>Croissant</span><span class="price">1400</span></div>
+                <div class="menu-item"><span>Apple Tart</span><span class="price">2300</span></div>
+            </div>
+        </div>
+    </div>
+
     <div class="marquee">
         <div class="marquee-content">
             <div class="marquee-slide">
-                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/1_f46c0884-acb4-468f-ae0a-1d3ad3139884.jpg?v=1776785586" alt="Lunaliq Image 1">
-                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/Desayuno_saludable_facil_con_yogur_frutas_y_granola.jpg?v=1776785586" alt="Lunaliq Image 2">
-                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/dce189eac47ae14c7e35d2aa3b29f58c_758e085d-1b4d-42a7-a8fd-c19cf7b6a2fd.jpg?v=1776785586" alt="Lunaliq Image 3">
-                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/Classic_Homemade_Club_Sandwich_-_Mileyshome.jpg?v=1776785586" alt="Lunaliq Image 4">
-                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/Passh.jpg?v=1776785586" alt="Lunaliq Image 5">
-                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/2_6d54af96-ddb4-45ce-a350-d051ee6109b1.jpg?v=1776785586" alt="Lunaliq Image 6">
-                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/3_4319e3b1-2a6e-4edf-a11d-81857867af73.jpg?v=1776785585" alt="Lunaliq Image 7">
-                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/3_4319e3b1-2a6e-4edf-a11d-81857867af73.jpg?v=1776785585" alt="Lunaliq Image 8">
-                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/San_Sebastian_Cheesecake.jpg?v=1776785585" alt="Lunaliq Image 9">
-                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/27_Delicious_Vegetarian_Keto_Breakfast_Recipes_to.jpg?v=1776785585" alt="Lunaliq Image 10">
+                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/1_f46c0884-acb4-468f-ae0a-1d3ad3139884.jpg?v=1776785586">
+                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/Desayuno_saludable_facil_con_yogur_frutas_y_granola.jpg?v=1776785586">
+                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/dce189eac47ae14c7e35d2aa3b29f58c_758e085d-1b4d-42a7-a8fd-c19cf7b6a2fd.jpg?v=1776785586">
+                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/Classic_Homemade_Club_Sandwich_-_Mileyshome.jpg?v=1776785586">
+                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/Passh.jpg?v=1776785586">
+                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/2_6d54af96-ddb4-45ce-a350-d051ee6109b1.jpg?v=1776785586">
+                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/3_4319e3b1-2a6e-4edf-a11d-81857867af73.jpg?v=1776785585">
+                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/San_Sebastian_Cheesecake.jpg?v=1776785585">
+                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/27_Delicious_Vegetarian_Keto_Breakfast_Recipes_to.jpg?v=1776785585">
             </div>
+            <div class="marquee-slide">
+                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/1_f46c0884-acb4-468f-ae0a-1d3ad3139884.jpg?v=1776785586">
+                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/Desayuno_saludable_facil_con_yogur_frutas_y_granola.jpg?v=1776785586">
+                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/dce189eac47ae14c7e35d2aa3b29f58c_758e085d-1b4d-42a7-a8fd-c19cf7b6a2fd.jpg?v=1776785586">
+                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/Classic_Homemade_Club_Sandwich_-_Mileyshome.jpg?v=1776785586">
+                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/Passh.jpg?v=1776785586">
+                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/2_6d54af96-ddb4-45ce-a350-d051ee6109b1.jpg?v=1776785586">
+                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/3_4319e3b1-2a6e-4edf-a11d-81857867af73.jpg?v=1776785585">
+                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/San_Sebastian_Cheesecake.jpg?v=1776785585">
+                <img src="https://cdn.shopify.com/s/files/1/0722/6363/0938/files/27_Delicious_Vegetarian_Keto_Breakfast_Recipes_to.jpg?v=1776785585">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="logo" style="color: #d8c3a5; font-size: 2rem;">LUNALIQ</div>
+        <p style="opacity: 0.5; margin-top: 20px;">Yerevan, Armenia | Daily 09:00 — 22:00</p>
+    </footer>
+
+</body>
+</html>
